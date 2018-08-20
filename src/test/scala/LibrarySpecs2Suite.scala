@@ -9,8 +9,8 @@ import org.scalatest.Matchers._
 @RunWith(classOf[JUnitRunner])
 class LibrarySpecs2Suite extends WordSpec {
   "someLibraryMethod" when {
-    "is always" should {
-      "true" in {
+    "invoked" should {
+      "is always true" in {
         val library = new Library()
         library.someLibraryMethod shouldBe true
       }
