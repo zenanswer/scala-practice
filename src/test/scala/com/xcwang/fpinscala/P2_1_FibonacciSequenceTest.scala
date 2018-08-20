@@ -9,33 +9,33 @@ import org.scalatest.Matchers._
 class P2_1_FibonacciSequenceTest extends WordSpec {
   "FibonacciSequence" when {
     "n=1 calculate result" should {
-      "be 1" in {
-        FibonacciSequence.calculate(1) shouldEqual List(1)
+      "be 0, 1" in {
+        FibonacciSequence.calculate(1) shouldEqual List(0, 1)
       }
     }
     "n=2 calculate result" should {
-      "be 1,1" in {
-        FibonacciSequence.calculate(2) shouldEqual List(1, 1)
+      "be 0, 1, 1" in {
+        FibonacciSequence.calculate(2) shouldEqual List(0, 1, 1)
       }
     }
     "n=3 calculate result" should {
-      "be 1, 1, 2" in {
-        FibonacciSequence.calculate(3) shouldEqual List(1, 1, 2)
+      "be 0, 1, 1, 2" in {
+        FibonacciSequence.calculate(3) shouldEqual List(0, 1, 1, 2)
       }
     }
     "n=4 calculate result" should {
-      "be 1, 1, 2, 3" in {
-        FibonacciSequence.calculate(4) shouldEqual List(1, 1, 2, 3)
+      "be 0, 1, 1, 2, 3" in {
+        FibonacciSequence.calculate(4) shouldEqual List(0, 1, 1, 2, 3)
       }
     }
     "n=5 calculate result" should {
-      "be 1, 1, 2, 3, 5" in {
-        FibonacciSequence.calculate(5) shouldEqual List(1, 1, 2, 3, 5)
+      "be 0, 1, 1, 2, 3, 5" in {
+        FibonacciSequence.calculate(5) shouldEqual List(0, 1, 1, 2, 3, 5)
       }
     }
     "n=6 calculate result" should {
-      "be 1, 1, 2, 3, 5, 8" in {
-        FibonacciSequence.calculate(6) shouldEqual List(1, 1, 2, 3, 5, 8)
+      "be 0, 1, 1, 2, 3, 5, 8" in {
+        FibonacciSequence.calculate(6) shouldEqual List(0, 1, 1, 2, 3, 5, 8)
       }
     }
     "21(n=8) calculate result" should {
