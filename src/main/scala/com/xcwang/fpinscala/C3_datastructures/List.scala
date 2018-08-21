@@ -35,4 +35,41 @@ object List{
     case Nil if newHead != null => Cons(newHead, Nil)
     case Cons(_, tail) => Cons(newHead, tail)
   }
+
+  // P3_4 drop func
+  def drop[A](l: List[A], n: Int): List[A] = n match {
+    case 0 => l
+    case _: Int if l == Nil => Nil
+    case x: Int if l != Nil=> drop(tail(l), x-1)
+  }
+
+  // P3_5 dropWhile func
+  def dropWhile[A](l: List[A], f: A => Boolean): List[A] = l match {
+//    case Nil => Nil
+//    case Cons(head, _) if !f(head) => l
+//    case Cons(head, _) if f(head) => dropWhile(tail(l), f)
+    case Cons(head, _) if f(head) => dropWhile(tail(l), f)
+    case _ => l
+  }
+
+  // Here is a curry version of dropWhile2
+  def dropWhile2[A](l: List[A])(f: A => Boolean): List[A] = l match {
+    case Cons(head, tail) if f(head) => dropWhile2(tail)(f)
+    case _ => l
+  }
+
+  // def add(x:Int)=(y:Int)=>x+y
+  def dropWhile2_0[A](l: List[A]) = (f: A => Boolean) => {
+    l match {
+      case Cons(head, tail) if f(head) => dropWhile2(tail)(f)
+      case _ => l
+    }
+  }
+
+  // P3_6 init func
+  def init[A](l:List[A]): List[A] = l match {
+    case Nil => Nil
+    case Cons(_, Nil) => Nil
+    case Cons(head, tail) => Cons(head, init(tail))
+  }
 }
