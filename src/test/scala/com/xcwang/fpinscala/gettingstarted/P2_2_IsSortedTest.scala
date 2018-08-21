@@ -1,9 +1,9 @@
-package com.xcwang.fpinscala
+package com.xcwang.fpinscala.gettingstarted
 
 import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
-import org.scalatest.WordSpec
 import org.scalatest.Matchers._
+import org.scalatest.WordSpec
+import org.scalatest.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
 class P2_2_IsSortedTest extends WordSpec {

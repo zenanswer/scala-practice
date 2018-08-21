@@ -1,5 +1,4 @@
-package com.xcwang.fpinscala
-
+package com.xcwang.fpinscala.gettingstarted
 
 object FibonacciSequence {
 
