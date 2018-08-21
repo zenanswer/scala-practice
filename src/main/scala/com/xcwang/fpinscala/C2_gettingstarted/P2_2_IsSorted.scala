@@ -1,4 +1,4 @@
-package com.xcwang.fpinscala.gettingstarted
+package com.xcwang.fpinscala.C2_gettingstarted
 
 object P2_2_IsSorted {
 

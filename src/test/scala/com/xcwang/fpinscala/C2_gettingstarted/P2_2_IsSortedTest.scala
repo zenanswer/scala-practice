@@ -1,4 +1,4 @@
-package com.xcwang.fpinscala.gettingstarted
+package com.xcwang.fpinscala.C2_gettingstarted
 
 import org.junit.runner.RunWith
 import org.scalatest.Matchers._
