@@ -8,7 +8,7 @@ import org.scalatest.junit.JUnitRunner
 @RunWith(classOf[JUnitRunner])
 class P3_TreeTest extends WordSpec {
 
-  val tree7 = Branch[Int](
+  val tree7: Branch[Int] = Branch[Int](
     Branch[Int](
       Leaf[Int](1),
       Leaf[Int](5)),
@@ -16,7 +16,7 @@ class P3_TreeTest extends WordSpec {
       Leaf[Int](8),
       Leaf[Int](4)))
 
-  val tree7pluse = Branch[Int](
+  val tree7plus: Branch[Int] = Branch[Int](
     Branch[Int](
       Leaf[Int](2),
       Leaf[Int](6)),
@@ -24,7 +24,7 @@ class P3_TreeTest extends WordSpec {
       Leaf[Int](9),
       Leaf[Int](5)))
 
-  val tree9 = Branch[Int](
+  val tree9: Branch[Int] = Branch[Int](
     Branch[Int](
       Branch[Int](
         Leaf[Int](1),
@@ -36,7 +36,7 @@ class P3_TreeTest extends WordSpec {
       Leaf[Int](8),
       Leaf[Int](4)))
 
-  val tree9String = Branch[String](
+  val tree9String: Branch[String] = Branch[String](
     Branch[String](
       Branch[String](
         Leaf[String]("1"),
@@ -92,17 +92,22 @@ class P3_TreeTest extends WordSpec {
   "P3_28 map result" when {
     "Tree 7, Leaf ++ " should {
       "Tree 7 plus" in {
-        Tree.map(tree7)(_+1) shouldEqual tree7pluse
+        Tree.map(tree7)(_+1) shouldEqual tree7plus
       }
     }
     "Tree 7, Leaf ++ (fold version)" should {
       "Tree 7 plus" in {
-        Tree.mapV2(tree7)(_+1) shouldEqual tree7pluse
+        Tree.mapV2(tree7)(_+1) shouldEqual tree7plus
       }
     }
     "Tree 9, Leaf toString " should {
       "Tree 9 string" in {
         Tree.map(tree9)(_.toString) shouldEqual tree9String
+      }
+    }
+    "Tree 9, Leaf toString (fold version)" should {
+      "Tree 9 string" in {
+        Tree.mapV2(tree9)(_.toString) shouldEqual tree9String
       }
     }
   }

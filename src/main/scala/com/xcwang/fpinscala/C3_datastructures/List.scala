@@ -16,10 +16,10 @@ object List{
   }
 
   // P3_1 Match result
-  val x = List(1,2,3,4,5) match {
-    case Cons(x, Cons(2, Cons(4, _))) => x
+  val x: Int = List(1,2,3,4,5) match {
+    case Cons(h, Cons(2, Cons(4, _))) => h
     case Nil => 42
-    case Cons(x, Cons(y, Cons(3, Cons(4, _)))) => x + y
+    case Cons(h, Cons(h2, Cons(3, Cons(4, _)))) => h + h2
     case Cons(h, t) => h + List.sum(t)
     case _ => 101
   }
@@ -60,9 +60,9 @@ object List{
   }
 
   // def add(x:Int)=(y:Int)=>x+y
-  def dropWhile2_0[A](l: List[A]) = (f: A => Boolean) => {
+  def dropWhile2_0[A](l: List[A]):((A=>Boolean)=>List[A]) = (f: A => Boolean) => {
     l match {
-      case Cons(head, tail) if f(head) => dropWhile2(tail)(f)
+      case Cons(head, tail) if f(head) => dropWhile2_0(tail)(f)
       case _ => l
     }
   }

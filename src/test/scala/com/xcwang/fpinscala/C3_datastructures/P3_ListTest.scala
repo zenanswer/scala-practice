@@ -63,7 +63,7 @@ class P3_ListTest extends WordSpec {
   "P3_5 dropWhile func" when {
 
     def genConditionFunc[A](condition: Int): A => Boolean = {
-      def conditionFunc[A](x: A) : Boolean = x match {
+      def conditionFunc(x: A) : Boolean = x match {
         case n: Int =>  n<condition
         case _ => false
       }
