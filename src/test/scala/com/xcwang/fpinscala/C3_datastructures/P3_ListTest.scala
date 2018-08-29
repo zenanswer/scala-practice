@@ -234,4 +234,11 @@ class P3_ListTest extends WordSpec {
       }
     }
   }
+  "P3_24 hasSubSeq func" when {
+    "List(1,2,3,4,5,6) List(3,4,5)" should {
+      "true" in {
+        List.hasSubSeq(List(1, 2, 3, 4, 5, 6), List(3, 4, 5)) shouldBe true
+      }
+    }
+  }
 }

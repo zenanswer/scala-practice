@@ -163,8 +163,10 @@ object List{
     case (Cons(h1,t1), Cons(h2,t2)) => Cons(f(h1,h2), zipWith(t1,t2)(f))
   }
 
-  //TODO
-//  def hasSubSeq[A](l1: List[A], l2: List[A]): Boolean = {
-//
-//  }
+  def hasSubSeq[A](l1: List[A], l2: List[A]): Boolean = (l1, l2) match {
+    case (Nil, _) => false
+    case (_, Nil) => true
+    case (Cons(h1,t1), Cons(h2,t2))  =>
+      if (h1 == h2) hasSubSeq(t1, t2) else hasSubSeq(t1, Cons(h2,t2))
+  }
 }
